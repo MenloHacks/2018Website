@@ -92,7 +92,7 @@ nav ul {
 }
 
 body, input, select, textarea {
-    font-family: "proxima-nova", sans-serif;
+    font-family: "proxima-nova", sans-serif !important;
 }
 
 
@@ -240,9 +240,12 @@ input.menlohacks-input {
     border-color: white !important;
     border: solid 1px !important;
     color: white !important;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
     height: 3em !important;
     padding: 0 1em !important;
+    font-size: 1.0em;
+    box-shadow: none;
+    line-height: 1.65;
 }
 
 .intro-paragraph {
@@ -451,7 +454,23 @@ input.menlohacks-input {
         box-sizing: border-box;
     }
 }
+.logo-header {
+    width:50%; /* you can use % */
+    height: auto;
+}
 
+.hidden-top {
+    display: none !important;
+}
+#header > .logo a {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    border-bottom: none;
+}
 
-
-
+header#header {
+    display: flex;
+    justify-content: flex-end;
+}

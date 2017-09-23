@@ -21,7 +21,8 @@
 		var	$window = $(window),
 			$body = $('body'),
 			$header = $('#header'),
-			$banner = $('#banner');
+			$banner = $('#banner'),
+        	$logo = $('#logo');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -44,19 +45,21 @@
 			});
 
 		// Header.
-			if (skel.vars.IEVersion < 9)
-				$header.removeClass('alt');
+			if (skel.vars.IEVersion < 9) {
+                $header.removeClass('alt');
+                $logo.removeClass('hidden-top');
+            }
 
 			if ($banner.length > 0
-			&&	$header.hasClass('alt')) {
+			&&	$logo.hasClass('hidden-top')) {
 
 				$window.on('resize', function() { $window.trigger('scroll'); });
 
 				$banner.scrollex({
 					bottom:		$header.outerHeight(),
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt'); },
-					leave:		function() { $header.removeClass('alt'); }
+					terminate:	function() { $logo.removeClass('hidden-top'); $header.removeClass('alt'); },
+					enter:		function() { $logo.addClass('hidden-top'); $header.addClass('alt'); },
+					leave:		function() { $logo.removeClass('hidden-top'); $header.removeClass('alt'); }
 				});
 
 			}
