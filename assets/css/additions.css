@@ -10,6 +10,7 @@
 	z-index:10000;
 	padding:0em;
 	margin-right:50px;
+    border-bottom:none;
 }
 
 @media screen and (max-width: 32em) {
